@@ -1,18 +1,10 @@
 @extends('app')
 @section('content')
 
-  <main role="main">
-      <div class="container">
-          <div class="jumbotron">
-              <h1>Navbar example</h1>
-              <p class="lead">This example is a quick exercise </p>
-            </div>
-      </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9" role="main">
-                @foreach($discussions as $d)
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9" role="main">
                     <div class="media">
                         <a class="media-left" href="#">
                             <img class="media-object rounded-circle" src="{{$d->user->avatar}}" width="64" height="64">
@@ -22,10 +14,17 @@
                             {!! $d->user->name !!}
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
-    </div>
-   
-  </main>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9" role="main">
+
+                </div>
+            </div>
+        </div>
+
+    </main>
 @stop

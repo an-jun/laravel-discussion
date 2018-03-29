@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function discussions() {
-        $this->hasMany(Discussion::class);//user->discusssions;
+      return  $this->hasMany(Discussion::class);//user->discusssions;
     }
 }

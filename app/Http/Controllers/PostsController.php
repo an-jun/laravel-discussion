@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Discussion;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -15,8 +16,10 @@ class PostsController extends Controller
     public function index()
     {
         $discussions = Discussion::all();
-
-        dd($discussions);
+//        foreach ($discussions as $d){
+//            dd($d->user());
+//        }
+//
         return view("forum.index",compact('discussions'));
     }
 
@@ -39,7 +42,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $d = Discussion::findOrFail($id);
+
+        return view('forum.show',compact('d'));
     }
 
     /**
